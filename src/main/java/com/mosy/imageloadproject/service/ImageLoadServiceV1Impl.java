@@ -17,8 +17,8 @@ import java.util.Locale;
 
 
 @Service
-@Profile("prod")
-public class ImageLoadServiceImpl implements ImageLoadService {
+@Profile("dev")
+public class ImageLoadServiceV1Impl implements ImageLoadService {
 
     @Value("${image.imageMaxSize}")
     private long imageMaxSize;
@@ -33,7 +33,7 @@ public class ImageLoadServiceImpl implements ImageLoadService {
     private final MessageSource messageSource;
 
     @Autowired
-    public ImageLoadServiceImpl(ProducerTemplate producerTemplate, CamelContext context, MessageSource messageSource) {
+    public ImageLoadServiceV1Impl(ProducerTemplate producerTemplate, CamelContext context, MessageSource messageSource) {
         this.producerTemplate = producerTemplate;
         this.context = context;
         this.messageSource = messageSource;
